@@ -2,28 +2,29 @@
 // =========
 // ↓ ➀index.htmlから「コース」と「人数」のデータを取得する変数を用意しよう
 // =========
-
+$course = $_GET["course"];
+$member = $_GET["member"];
 
 // =======
 // ↓ ➁条件分岐を使って、４つのコースごとに予算,コース名,画像名を用意できるようにしよう
 // =======
 $cost = 0;
-if ($course == "") {
-    $cost =  ;
-    $course_name = "";
-    $image = "";
-} else if ($course == "") {
-    $cost =  ;
-    $course_name = "";
-    $image = "";
-} else if ($course == "") {
-    $cost =  ;
-    $course_name = "";
-    $image = "";
+if ($course == "101") {
+  $cost =  $member * 3000 * 1.1;
+  $course_name = "もつ鍋コース";
+  $image = "food1.jpg";
+} else if ($course == "102") {
+  $cost =  $member * 3800 * 1.1;
+  $course_name = "海鮮コース";
+  $image = "food2.jpg";
+} else if ($course == "103") {
+  $cost =  $member * 5200 * 1.1;
+  $course_name = "懐石料理コース";
+  $image = "food3.jpg";
 } else {
-    $cost = ;
-    $course_name = "";
-    $image = "";
+  $cost = $member * 1500 * 1.1;
+  $course_name = "小宴会コース";
+  $image = "food4.jpg";
 }
 ?>
 <!DOCTYPE html>
@@ -58,18 +59,18 @@ if ($course == "") {
           <!-- ➂index.htmlから受け取った値を表示してみよう -->
           <li>
             <span>コース</span><br>
-            <?php echo ; ?>
+            <?php echo $course_name; ?>
           </li>
           <li><span>人数</span><br>
-            <?php echo ; ?>名様
+            <?php echo $member; ?>名様
           </li>
           <li><span>合計金額</span><br>
-            ¥<?php echo $; ?> (税込み)
+            ¥<?php echo $cost; ?> (税込み)
           </li>
         </ul>
         <figure class="image">
           <!-- ➂選んだコース画像を表示できるようにしよう -->
-          <img src="<?php echo "images/".〇〇; ?>">
+          <img src="<?php echo "images/" . "$image"; ?>">
         </figure>
       </div>
 
@@ -82,18 +83,21 @@ if ($course == "") {
             <div>
               <!-- ⑤入力項目を必須化させよう -->
               <!-- ⑤プレースホルダを使って、氏名の箇所をわかりやすくしてみよう-->
-              <input type="text" name="name" class="name">
-              <input type="text" name="under_name" class="name">
+              <input type="text" name="name" class="name" placeholder="氏" required>
+              <input type="text" name="under_name" class="name" placeholder="名" required>
             </div>
           </li>
           <li>
             <label>連絡可能な電話番号<span class="red">*</span></label>
             <div>
-              <input type="tel" name="phone" class="phone" pattern="\d{2,4}-?\d{3,4}-?\d{3,4}">
+              <input type="tel" name="phone" class="phone" pattern="\d{2,4}-?\d{3,4}-?\d{3,4}" required>
               <input type="reset" value="情報をリセット" />
             </div>
           </li>
           <!-- ➅送り先のthanks.phpに届けるために「見えないデータ」として、コース名・合計金額・画像ファイル名を配置してみましょう -->
+          <input type="hidden" name="course_name" value="<?php echo $course_name; ?>">
+          <input type="hidden" name="cost" value="<?php echo $cost; ?>">
+          <input type="hidden" name="image" value="<?php echo $image; ?>">
 
           <input type="button" class="back" onclick="history.back()" value="変更する">
           <input type="submit" class="submit" value="予約を確定する">

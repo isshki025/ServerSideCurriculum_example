@@ -1,6 +1,11 @@
 <?PHP
 // ➀confirm.phpからPOSTで６つの値を受け取れるようにしましょう。
-
+$name = $_POST["name"];
+$under_name = $_POST["under_name"];
+$phone = $_POST["phone"];
+$course_name = $_POST["course_name"];
+$cost = $_POST["cost"];
+$image = $_POST["image"];
 
 ?>
 <!DOCTYPE html>
@@ -39,32 +44,33 @@
         <ul>
           <li>
             <span class="blue">ご予約者名</span><br>
-            <?php echo ""."" ;?> 様
+            <?php echo "$name" . "$under_name"; ?> 様
           </li>
           <li>
             <span class="blue">ご連絡可能な電話番号</span><br>
-            <?php echo ; ?>
+            <?php echo $phone; ?>
           </li>
           <li>
             <span class="blue">コース</span><br>
-            <?php echo ; ?>
+            <?php echo $course_name; ?>
           </li>
           <li>
             <span class="blue">合計金額</span><br>
-            ¥<?php echo; ?>(税込み)
+            ¥<?php echo $cost; ?>(税込み)
           </li>
         </ul>
         <figure class="image">
-          <img src="<?php echo "images/".〇〇; ?>">
+          <img src="<?php echo "images/" . $image; ?>">
         </figure>
       </div>
       <div class="top">
         <!-- ➂最初のindex.htmlに戻るリンクを書こう -->
-        <input type="button" value="予約トップへ戻る" onClick="location.href=" class="back">
+        <input type="button" value="予約トップへ戻る" onClick="location.href='./index.html'" class="back">
       </div>
     </div>
     <footer>
     </footer>
   </div>
 </body>
+
 </html>

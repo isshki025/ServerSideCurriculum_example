@@ -1,89 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8" />
-	<link rel="stylesheet" href="css/style.css" />
-	<link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet">
-	<script src="./js/vendor/jquery-1.10.2.min.js"></script>
-	<script src="./js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
-	<script src="./js/main.js"></script>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet">
+  <script src="./js/vendor/jquery-1.10.2.min.js"></script>
+  <script src="./js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
+  <script src="./js/main.js"></script>
 </head>
 <body>
-	<div class="wrapper">
-		<header>
-			<div class="header-wrapper">
-				<div class="header-content">
-					<h1>大衆居酒屋あとらす　Izakaya&nbsp;Atlas</h1>
-					<p><span class="noon">11:00~14:00</span>　<span class="night">17:00~24:00</span></p>
-				</div>
-			</div>
-		</header>
-		<div id="content">
-			<ul class="procedure">
-				<li class="choice">コース選択</li>
-				<li class="gray">予約手続き</li>
-				<li class="light_gray">予約完了</li>
-			</ul>
-			<div id="images">
-				<div class="clearfix">
-					<p>
-						<img src="images/food1.jpg" alt="もつ鍋">
-						<strong>もつ鍋コース<br>¥3,000</strong><span></span>
-					</p>
-					<p>
-						<img src="images/food2.jpg" alt="海鮮">
-						<strong>海鮮コース<br>¥3,800</strong><span></span>
-					</p>
-					<p>
-						<img src="images/food3.jpg" alt="懐石料理">
-						<strong>懐石料理コース<br>¥5,200</strong><span></span>
-					</p>
-					<p>
-						<img src="images/food4.jpg" alt="小宴会">
-						<strong>小宴会コース<br>¥1,500</strong><span></span>
-					</p>
-				</div>
-			</div>
+  <div class="wrapper">
+    <header>
+      <div class="header-wrapper">
+        <div class="header-content">
+          <h1>大衆居酒屋あとらす　Izakaya&nbsp;Atlas</h1>
+          <p><span class="noon">11:00~14:00</span>　<span class="night">17:00~24:00</span></p>
+        </div>
+      </div>
+    </header>
+    <div id="content">
+      <ul class="procedure">
+        <li class="choice">コース選択</li>
+        <li class="gray">予約手続き</li>
+        <li class="light_gray">予約完了</li>
+      </ul>
+      <div id="images">
+        <div class="clearfix">
+          <p>
+            <img src="images/food1.jpg" alt="もつ鍋">
+            <strong>もつ鍋コース<br>¥3,000</strong><span></span>
+          </p>
+          <p>
+            <img src="images/food2.jpg" alt="海鮮">
+            <strong>海鮮コース<br>¥3,800</strong><span></span>
+          </p>
+          <p>
+            <img src="images/food3.jpg" alt="懐石料理">
+            <strong>懐石料理コース<br>¥5,200</strong><span></span>
+          </p>
+          <p>
+            <img src="images/food4.jpg" alt="小宴会">
+            <strong>小宴会コース<br>¥1,500</strong><span></span>
+          </p>
+        </div>
+      </div>
 
-			<!-- ➀送信方法を決めましょう -->
-			<form action="confirm.php">
-				<ul class="select">
-					<li class="yoko">
-						<label>コース</label><br>
-						<span>
-							<!-- ➁各コース名の値(value)を設定しましょう -->
-							<select name="course">
-								<option>もつ鍋コース</option>
-								<option>海鮮コース</option>
-								<option>懐石料理コース</option>
-								<option>小宴会コース</option>
-							</select>
-						</span>
-					</li>
-					<li class="yoko">
-						<label>人数</label><br>
-						<!-- ➂データを送るためのnameキーを設定しましょう -->
-						<select>
-							<!-- ➂最初に選択されている項目を「2名」にしておきましょう -->
-							<option value="1">1名</option>
-							<option value="2">2名</option>
-							<option value="3">3名</option>
-							<option value="4">4名</option>
-							<option value="5">5名</option>
-							<option value="6">6名</option>
-							<option value="7">7名</option>
-							<option value="8">8名</option>
-						</select>
-					</li>
-					<li>
-						<!-- ↓ ➃送信するためのボタンを設置しましょう -->
-
-					</li>
-				</ul>
-			</form>
-		</div>
-		<footer>
-		</footer>
-	</div>
+      <!-- ➀送信方法を決めましょう -->
+      <form action="confirm.php" method="get">
+        <ul class="select">
+          <li class="yoko">
+            <label>コース</label><br>
+            <span>
+              <!-- ➁各コース名の値(value)を設定しましょう -->
+              <select name="course">
+                <option value="101">もつ鍋コース</option>
+                <option value="102">海鮮コース</option>
+                <option value="103">懐石料理コース</option>
+                <option value="104">小宴会コース</option>
+              </select>
+            </span>
+          </li>
+          <li class="yoko">
+            <label>人数</label><br>
+            <!-- ➂データを送るためのnameキーを設定しましょう -->
+            <select name="member">
+              <!-- ➂最初に選択されている項目を「2名」にしておきましょう -->
+              <option value="1">1名</option>
+              <option value="2" selected>2名</option>
+              <option value="3">3名</option>
+              <option value="4">4名</option>
+              <option value="5">5名</option>
+              <option value="6">6名</option>
+              <option value="7">7名</option>
+              <option value="8">8名</option>
+            </select>
+          </li>
+          <li>
+            <!-- ↓ ➃送信するためのボタンを設置しましょう -->
+            <input class="submit" type="submit" value="次へ">
+          </li>
+        </ul>
+      </form>
+    </div>
+    <footer>
+    </footer>
+  </div>
 </body>
 </html>
