@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--IEブラウザ対策-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="ページの内容を表す文章" />
+    <title></title>
+    <link rel="stylesheet" href="">
+    <style  type="text/css">
+    label{
+        display: block;
+    }
+    input,select,textarea{
+        display: block;
+        margin-bottom: 20px;
+    }
+    input[type="radio"]{
+        display: inline-block;
+    }
+    </style>
+    <!--スマホ,タブレット対応-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+</head>
+<body>
+
+    <!--
+        【 学習範囲はここからとなります 】
+    -->
+<form action="confirm.php" method="post">
+
+    <label>お名前</label>
+    <input type="text" name="username" />
+    <label>メールアドレス</label>
+    <input type="mail" name="mail" />
+
+    <label>問い合わせ</label>
+    <textarea name="format">問い合わせ内容を入れてください。</textarea>
+
+    <label>好きな色は？</label>
+    <select name="color">
+        <option value="red">赤</option>
+        <option value="blue">青</option>
+        <option value="green">緑</option>
+        <option value="yellow">黄</option>
+    </select>
+
+    <label>性別</label>
+    <input type="radio" name="gender" value="男性" />男性
+    <input type="radio" name="gender" value="女性" checked/>女性
+
+    <label>趣味は?(複数可)</label>
+    <input type="checkbox" name="hobbies[]" value="釣り" />
+    <input type="checkbox" name="hobbies[]" value="テニス" />
+    <input type="checkbox" name="hobbies[]" value="美術館巡り" />
+    <input type="checkbox" name="hobbies[]" value="料理" />
+
+    <input type="reset" value="クリア">
+    <input type="submit" value="送信">
+
+</form>
+
+</body>
