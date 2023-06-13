@@ -1,5 +1,10 @@
 @charset "utf-8";
 
+.var_dump {
+  padding: 15px;
+  background: rgb(224, 255, 224);
+  font-size: 16px;
+}
 
 body {
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", "verdana", sans-serif;
@@ -393,7 +398,7 @@ p.return {
 }
 
 p.return a {
-  padding: 10px;
+  padding: 14px;
   padding-left: 50px;
   padding-right: 25px;
   color: #fff;
